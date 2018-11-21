@@ -27,12 +27,26 @@ void Level::Draw(sf::RenderTarget & _target)
 	// Draw game world to the window
 	_target.setView(camera);
 
-	// TODO: Draw game objects
+	// Draw game objects
 	for (int y = 0; y < m_background.size(); ++y)
 	{
 		for (int x = 0; x < m_background[y].size(); ++x)
 		{
 			_target.draw(m_background[y][x]);
+		}
+	}
+
+	// rows
+	for (int y = 0; y < m_contents.size(); ++y)
+	{
+		// cells
+		for (int x = 0; x < m_contents[y].size(); ++x)
+		{
+			//Sticky outies (grid objects)
+			for (int z = 0; z < m_contents[y][x].size(); ++z)
+			{
+				m_contents[y][x][z] ->Draw(_target);
+			}
 		}
 	}
 
@@ -49,10 +63,24 @@ void Level::LoadLevel(int _levelToLoad)
 {
 	// Clean up the old level
 
-	// TODO: Delete any data already in the level
+	// Delete any data already in the level
+	// rows
+	for (int y = 0; y < m_contents.size(); ++y)
+	{
+		// cells
+		for (int x = 0; x < m_contents[y].size(); ++x)
+		{
+			//Sticky outies (grid objects)
+			for (int z = 0; z < m_contents[y][x].size(); ++z)
+			{
+				delete m_contents[y][x][z];
+			}
+		}
+	}
 
 	// Clear out our lists
 	m_background.clear();
+	m_contents.clear();
 
 	// Set the current level
 	m_currentLevel = _levelToLoad;
@@ -120,7 +148,7 @@ void Level::LoadLevel(int _levelToLoad)
 			{
 				Wall* wall = new Wall();
 				wall->SetLevel(this);
-				wall->SetPosition(x, y);
+				wall->SetGridPosition(x, y);
 				m_contents[y][x].push_back(wall);
 			}
 			else
