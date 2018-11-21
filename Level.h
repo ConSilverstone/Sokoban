@@ -1,6 +1,9 @@
 #pragma once
 
-//Project Includes
+// Project Includes
+#include "GridObject.h"
+
+// Library Includes
 #include <SFML/Graphics.hpp>
 
 class Level
@@ -16,9 +19,12 @@ public:
 	void ReloadLevel();
 	void LoadNextLevel();
 
+	float GetCellSize();
+
 private:
 
 	const float m_cellSize;
 	int m_currentLevel;
 	std::vector< std::vector <sf::Sprite> > m_background;
+	std::vector< std::vector <std::vector<GridObject*> > > m_contents;
 };

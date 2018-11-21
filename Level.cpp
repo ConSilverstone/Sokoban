@@ -129,3 +129,8 @@ void Level::LoadNextLevel()
 {
 	LoadLevel(m_currentLevel + 1);
 }
+
+float Level::GetCellSize()
+{
+	return m_cellSize;
+}
