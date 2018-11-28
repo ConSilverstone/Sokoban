@@ -1,5 +1,5 @@
 W W W W W W W W W W W W
-W E H C H - - - - - - W
+W E H C H - - - - S - W
 W - H - H K W W - - - W
 W - H - W W - - - - - W
 W - - - - W - W - - - W
@@ -7,6 +7,6 @@ W W W W - W - W - - - W
 W - - - - W - W - - - W
 W - H W W W - W - - - W
 W - H - H - - W - - - W
-W - - - - - - W - - - W
-W - - H - H - W - - P W
+W - - - - - - W - P - W
+W - - H - H - W - - - W
 W W W W W W W W W W W W
