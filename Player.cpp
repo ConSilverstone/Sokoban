@@ -62,11 +62,15 @@ void Player::Update(sf::Time _frameTime)
 	if (m_pendingMove.x != 0 || m_pendingMove.y != 0)
 	{
 		// Move in that direction
-		AttemptMove(m_pendingMove);
+		bool moveSuccessful = AttemptMove(m_pendingMove);
+		
+		if (moveSuccessful == true)
+		{
+			// Play walking sound
+			m_playerMoveSound.play();
+		}
 		// clear pending move.
 		m_pendingMove = sf::Vector2i(0, 0);
-		// Play walking sound
-		m_playerMoveSound.play();
 		
 	}
 }
@@ -79,8 +83,24 @@ bool Player::AttemptMove(sf::Vector2i _direction)
 	// Calculate target position
 	sf::Vector2i targetPos = m_gridPosition + _direction;
 
-	//TODO: Check if the spaces are empty
+	// Check if the spaces are empty
+	// Get list of objects in our target position
+	std::vector<GridObject*> targetCellContents = m_level->GetObjectAt(targetPos);
+
+	// Check if any of those objects block movement
+	bool blocked = false;
+	for (int i = 0; i < targetCellContents.size(); i++)
+	{
+		if (targetCellContents[i]->GetBlocksMovement() == true)
+		{
+			blocked = true;
+		}
+	}
 
 	// If empty, move there
-	return m_level->MoveObjectTo(this, targetPos);
+	if (blocked == false)
+		return m_level->MoveObjectTo(this, targetPos);
+
+	// If movement is blocked, do nothing, return false
+	return false;
 }

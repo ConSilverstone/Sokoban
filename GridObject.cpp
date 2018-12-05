@@ -6,6 +6,7 @@ GridObject::GridObject()
 	: SpriteObject()
 	, m_gridPosition(0, 0)
 	, m_level(nullptr)
+	, m_blocksMovement(false)
 {
 }
 
@@ -30,4 +31,9 @@ void GridObject::SetLevel(Level * _newLevel)
 sf::Vector2i GridObject::GetGridPosition()
 {
 	return m_gridPosition;
+}
+
+bool GridObject::GetBlocksMovement()
+{
+	return m_blocksMovement;
 }
