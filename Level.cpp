@@ -58,7 +58,19 @@ void Level::Draw(sf::RenderTarget & _target)
 
 void Level::Update(sf::Time _frameTime)
 {
-	 // TODO
+	// rows
+	for (int y = 0; y < m_contents.size(); ++y)
+	{
+		// cells
+		for (int x = 0; x < m_contents[y].size(); ++x)
+		{
+			//Sticky outies (grid objects)
+			for (int z = 0; z < m_contents[y][x].size(); ++z)
+			{
+				m_contents[y][x][z]->Update(_frameTime);
+			}
+		}
+	}
 }
 
 void Level::Input(sf::Event _gameEvent)
