@@ -8,9 +8,11 @@ Player::Player()
 	: GridObject()
 	, m_pendingMove(0,0)
 	, m_playerMoveSound()
+	, m_playerBumpingSound()
 {
 	m_sprite.setTexture(AssetManager::GetTexture("graphics/player/playerStandDown.png"));
 	m_playerMoveSound.setBuffer(AssetManager::GetSoundBuffer("audio/footstep1.ogg"));
+	m_playerBumpingSound.setBuffer(AssetManager::GetSoundBuffer("audio/bump.wav"));
 }
 
 void Player::Input(sf::Event _gameEvent)
@@ -68,6 +70,10 @@ void Player::Update(sf::Time _frameTime)
 		{
 			// Play walking sound
 			m_playerMoveSound.play();
+		}
+		else 
+		{
+			m_playerBumpingSound.play();
 		}
 		// clear pending move.
 		m_pendingMove = sf::Vector2i(0, 0);
