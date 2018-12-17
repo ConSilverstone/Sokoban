@@ -1,10 +1,12 @@
-W W W W W W W W W W W W W
-W - - - - - C - - - - - W
-W - E - - C H C - - K - W
-W - - - - - C - - - - - W
-W - - - - C - - - - - - W
-W H - - H - W W W - - - W
-W - - - H - - - - - - - W
-W C C - H - W W W - P - W
-W C C - - C - - - - - - W
-W W W W W W W W W W W W W
+W W W W W W W W W W W W
+W E H C H - - - - - - W
+W - H - H K W W - - - W
+W - H - W W - - - - - W
+W - - - - W - W - - - W
+W W W W - W P W - - - W
+W - - - - W - W - - - W
+W - H W W W - W - - - W
+W - H - H - - W - - - W
+W - - - - - - W - - - W
+W - - H - H - W - - - W
+W W W W W W W W W W W W

@@ -14,8 +14,11 @@ public:
 	Box();
 
 	bool AttemptPush(sf::Vector2i _direction);
+	bool GetStored();
 
 private:
 
+	bool m_stored;
 	sf::Sound m_pushSound;
+	sf::Sound m_storeSound;
 };
