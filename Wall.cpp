@@ -1,6 +1,6 @@
 // Project Includes
-# include "Wall.h"
-# include "Framework/AssetManager.h"
+#include "Wall.h"
+#include "Framework/AssetManager.h"
 
 Wall::Wall()
 	: GridObject()

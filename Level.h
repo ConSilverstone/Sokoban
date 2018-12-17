@@ -8,6 +8,7 @@
 
 class Level
 {
+
 public:
 
 	Level();
@@ -22,12 +23,13 @@ public:
 
 	float GetCellSize();
 	bool MoveObjectTo(GridObject* _toMove, sf::Vector2i _targetPos);
-	std::vector<GridObject*> GetObjectAt(sf::Vector2i _targetPos);
+	std::vector< GridObject* > GetObjectAt(sf::Vector2i _targetPos);
 
-private:
+private: 
 
 	const float m_cellSize;
 	int m_currentLevel;
-	std::vector< std::vector <sf::Sprite> > m_background;
-	std::vector< std::vector <std::vector<GridObject*> > > m_contents;
+	std::vector< std::vector< sf::Sprite > > m_background;
+	std::vector< std::vector< std::vector< GridObject* > > > m_contents;
+
 };

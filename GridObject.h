@@ -1,15 +1,17 @@
 #pragma once
 
 // Project Includes
-# include "Framework/SpriteObject.h"
+#include "Framework/SpriteObject.h"
 
 // Forward Declaration
-// (Only works with pointers or references)
+// (only works with pointers/references)
 class Level;
 
 class GridObject : public SpriteObject
 {
+
 public:
+
 	GridObject();
 
 	void SetGridPosition(sf::Vector2i _newPosition);
@@ -21,7 +23,7 @@ public:
 	bool GetBlocksMovement();
 
 protected:
-	
+
 	sf::Vector2i m_gridPosition;
 	Level* m_level;
 	bool m_blocksMovement;

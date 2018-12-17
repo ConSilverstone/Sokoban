@@ -1,8 +1,8 @@
 // Project Includes
-# include "StorageObject.h"
-# include "Framework/AssetManager.h"
+#include "Storage.h"
+#include "Framework/AssetManager.h"
 
-StorageSpace::StorageSpace()
+Storage::Storage()
 	: GridObject()
 {
 	m_sprite.setTexture(AssetManager::GetTexture("graphics/storage.png"));

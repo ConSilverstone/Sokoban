@@ -19,7 +19,7 @@ int main()
 
 	// Window - to draw to the screen
 	sf::RenderWindow gameWindow;
-	gameWindow.create(sf::VideoMode::getDesktopMode(), "Sokoban", sf::Style::Titlebar | sf::Style::Close);
+	gameWindow.create(sf::VideoMode::getDesktopMode(), "Button Masher", sf::Style::Titlebar | sf::Style::Close);
 
 	// Seed our random number generator 
 	srand(time(NULL));
@@ -32,8 +32,6 @@ int main()
 
 	// Create the game level
 	Level ourLevel;
-
-
 
 	// -----------------------------------------------
 	// Game Loop
@@ -49,7 +47,7 @@ int main()
 		sf::Event gameEvent;
 		while (gameWindow.pollEvent(gameEvent))
 		{
-			//Pass event to input objects
+			// Pass event to input objects
 			ourLevel.Input(gameEvent);
 
 			// Did the player try to close the window?
@@ -61,6 +59,7 @@ int main()
 
 		} // End event polling loop
 
+
 		// -----------------------------------------------
 		// Update Section
 		// -----------------------------------------------
@@ -69,6 +68,7 @@ int main()
 
 		// Pass update to level
 		ourLevel.Update(frameTime);
+
 
 		// -----------------------------------------------
 		// Draw Section
@@ -85,4 +85,4 @@ int main()
 	} // End of Game Loop
 	return 0;
 
-} // End of main() Function 
+} // End of main() Function

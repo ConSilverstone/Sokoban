@@ -6,7 +6,7 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
     <Filter Include="Framework">
-      <UniqueIdentifier>{f6db56d6-f0f8-4671-9f93-797785b765c8}</UniqueIdentifier>
+      <UniqueIdentifier>{5a7544cb-7719-4e82-8ffa-466d05a9f97b}</UniqueIdentifier>
     </Filter>
     <Filter Include="Game Code">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
@@ -44,10 +44,13 @@
     <ClCompile Include="Wall.cpp">
       <Filter>Game Code</Filter>
     </ClCompile>
-    <ClCompile Include="StorageObject.cpp">
+    <ClCompile Include="Storage.cpp">
       <Filter>Game Code</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
+      <Filter>Game Code</Filter>
+    </ClCompile>
+    <ClCompile Include="Box.cpp">
       <Filter>Game Code</Filter>
     </ClCompile>
   </ItemGroup>
@@ -79,10 +82,13 @@
     <ClInclude Include="Wall.h">
       <Filter>Game Code</Filter>
     </ClInclude>
-    <ClInclude Include="StorageObject.h">
+    <ClInclude Include="Storage.h">
       <Filter>Game Code</Filter>
     </ClInclude>
     <ClInclude Include="Player.h">
+      <Filter>Game Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Box.h">
       <Filter>Game Code</Filter>
     </ClInclude>
   </ItemGroup>

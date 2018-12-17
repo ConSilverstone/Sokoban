@@ -19,6 +19,7 @@ void GameObject::Update(sf::Time _frameTime)
 
 void GameObject::Input(sf::Event _gameEvent)
 {
+
 }
 
 sf::FloatRect GameObject::GetBounds()
@@ -41,12 +42,12 @@ void GameObject::SetPosition(float _x, float _y)
 
 }
 
-sf::Vector2f GameObject::getPosition()
-{
-	return sf::Vector2f();
-}
-
 bool GameObject::IsActive()
 {
 	return m_active;
+}
+
+sf::Vector2f GameObject::GetPosition()
+{
+	return sf::Vector2f();
 }
